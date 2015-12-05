@@ -1,0 +1,16 @@
+<h1 align="center"><%= @product.title %></h1>
+<div>
+  <%= image_tag @product.product_image_url(:small) %>
+</div>
+
+<div>
+  <%= @product.description %>
+</div>
+<br>
+<div>
+  Цена: <b> <%= number_to_currency(@product.price, precision: 2, separator: ',', unit: 'грн.: ') %> </b>
+</div>
+<br>
+<div>
+  <%= link_to 'Купить', '#' %>
+</div>

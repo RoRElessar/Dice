@@ -25,6 +25,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'rmagick'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 

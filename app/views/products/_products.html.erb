@@ -1,0 +1,8 @@
+<div>
+  <% @products.each do |product| %>
+      <p> <%= link_to (image_tag product.product_image_url(:small)), product if product.product_image? %> </p>
+      <p> <%= link_to product.title, product  %> </p>
+      <p> <%= product.description %> </p>
+      <p> Цена: <b><%= number_to_currency(product.price, precision: 2, separator: ',', unit: 'грн. ') %></b> </p>
+  <% end %>
+</div>
