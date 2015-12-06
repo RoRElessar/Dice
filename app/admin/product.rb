@@ -3,10 +3,12 @@ ActiveAdmin.register Product do
 
   index do
     column :id
-    column 'image' do |product|
+    column 'Изображение' do |product|
       image_tag product.product_image_url(:small) if product.product_image?
     end
     column 'Название', :title
+    column 'Цена', :price
+    column 'Добавлен'
     actions
   end
 

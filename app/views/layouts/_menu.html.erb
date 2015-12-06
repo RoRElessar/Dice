@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default" id="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'Dice', root_path, class: 'navbar-brand'%>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li> <%= link_to 'Категории игр', '#' %> </li>
+        <li> <%= link_to 'Хиты', '#' %> </li>
+        <li> <%= link_to 'Акции', '#' %> </li>
+      </ul>
+
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Поиск">
+        </div>
+        <button type="submit" class="btn btn-default">Поиск</button>
+      </form>
+
+      <ul class="nav navbar-nav">
+        <li> <%= link_to 'О нас', '#' %> </li>
+        <li> <%= link_to 'Контакты', '#'%> </li>
+        <li> <%= link_to 'Оплата и доставка', '#' %> </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>

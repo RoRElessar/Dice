@@ -5,7 +5,4 @@ class Product < ActiveRecord::Base
 
   mount_uploader :product_image, ProductImageUploader
 
-  def to_param
-    "#{:id}-#{title.parameterize}"
-  end
 end
