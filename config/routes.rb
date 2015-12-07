@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  default_url_options host: 'l500etc@gmail.com'
+  #default_url_options host: 'l500etc@gmail.com'
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
