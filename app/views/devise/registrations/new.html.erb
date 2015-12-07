@@ -6,7 +6,7 @@
 
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email, autofocus: true, class: 'registr-form', id: 'glowing-border' %>
     </div>
 
     <div class="field">
@@ -14,12 +14,12 @@
       <% if @minimum_password_length %>
       <em>(минимум <%= @minimum_password_length %> знаков)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: 'off', class: '' %>
+      <%= f.password_field :password, autocomplete: 'off', class: 'registr-form', id: 'glowing-border' %>
     </div>
 
     <div class="field">
       <%= f.label :Подтверждение_пароля %><br />
-      <%= f.password_field :password_confirmation, autocomplete: 'off' %>
+      <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'registr-form', id: 'glowing-border' %>
     </div>
 
     <div class="actions">
