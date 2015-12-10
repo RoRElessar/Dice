@@ -6,6 +6,7 @@
         <p> <%= link_to (image_tag product.product_image_url(:small)), product if product.product_image? %> </p>
         <p> <%= link_to product.category.title, '#' %> </p>
         <p> Цена: <b> <%= number_to_currency(product.price, locale: :en) %> </b> </p>
+        <p> <%= link_to 'Купить', '#' %> </p>
       </div>
     </div>
   </div>
