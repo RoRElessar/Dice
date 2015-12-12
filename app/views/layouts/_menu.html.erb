@@ -27,7 +27,8 @@
         <li> <%= link_to 'О нас', '#' %> </li>
         <li> <%= link_to 'Контакты', '#'%> </li>
         <li> <%= link_to 'Оплата и доставка', '#' %> </li>
-        <li> <%= link_to 'Корзина', '#' %></li>
+        <li> <%= link_to image_tag('shopping-cart.png', size: '22x22'), cart_path %></li>
+        <li> <span class="badge" style="margin-top: 17px"><%= line_items_cart.count %></span></li>
         <% if signed_in?%>
           <li class="dropdown" id="current_user_right">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
