@@ -1,5 +1,7 @@
-<p>Приветствуем <%= @email %>!</p>
+<div>
+  <p align="center">Приветствуем, <strong><%= @email %></strong>!</p>
 
-<p>Вы можете подтвердить свою учетную запись по ссылке ниже:</p>
+  <p>Вы можете подтвердить свою учетную запись по ссылке ниже:</p>
 
-<p><%= link_to 'Подтвердить учетную запись', confirmation_url(@resource, confirmation_token: @token) %></p>
+  <p><%= link_to 'Подтвердить учетную запись', confirmation_url(@resource, confirmation_token: @token) %></p>
+</div>
