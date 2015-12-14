@@ -7,9 +7,9 @@
           <td><%= index+1 %></td>
           <td><%= link_to image_tag(line_item.product.product_image_url(:cart)), product_path(line_item.product) %></td>
           <td><%= link_to line_item.product.title, product_path(line_item.product) %></td>
-          <td>1</td>
-          <td><%= number_to_currency(line_item.product.price) %></td>
-          <% @total_amount += line_item.product.price %>
+          <td><%= line_item.amount %></td>
+          <td><%= number_to_currency(line_item.product.price * line_item.amount) %></td>
+          <% @total_amount += (line_item.product.price * line_item.amount) %>
           <td><%= link_to image_tag('button-cross.png', size: '20x20'), line_item_path(line_item), method: :delete, data: {confirm: 'Вы уверены?'} %></td>
         </tr>
         <% end %>
@@ -27,7 +27,8 @@
       <h3>Адресс доставки</h3>
       <div>Имя (формочка)</div>
       <div>Телефон (формочка)</div>
-      <%= link_to 'Оформить заказ', '#' %>
+      <div><%= link_to 'Оформить заказ', '#' %></div>
+      <div><%= link_to 'Продолжить покупки', root_path %></div>
     </div>
     <% else  %>
       <h3 align="center">Ваша корзина пока пуста</h3>
