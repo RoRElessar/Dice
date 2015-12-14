@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem 'carrierwave_direct'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'rmagick'
