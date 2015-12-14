@@ -10,7 +10,7 @@ module ApplicationHelper
 
   def line_items_cart
     @cart = current_cart
-    @line_items_cart = @cart.line_items
+    @line_items_cart = @cart.line_items.sum('amount')
   end
 
 end
