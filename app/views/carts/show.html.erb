@@ -22,13 +22,34 @@
           <td></td>
         </tr>
       </table>
+    <div><%= button_to 'Очистить корзину', @cart, method: :delete, data: {confirm: 'Вы уверены?'}, class: 'btn btn-default' %></div>
     </div>
     <div class="col-md-6">
-      <h3>Адресс доставки</h3>
-      <div>Имя (формочка)</div>
-      <div>Телефон (формочка)</div>
-      <div><%= link_to 'Оформить заказ', '#' %></div>
-      <div><%= link_to 'Продолжить покупки', root_path %></div>
+      <h3>Данные о покупателе</h3>
+
+      <%= form_for @order do |f| %>
+          <table class="table">
+            <tr>
+              <td>
+                <%= f.text_field :name, placeholder: 'ФИО', class: 'order-form', id: 'glowing-border' %>
+                <br>
+              </td>
+              <td>
+                <%= f.email_field :email, placeholder: 'Email', class: 'order-form', id: 'glowing-border' %>
+              </td>
+              <td>
+                <%= f.text_field :phone, placeholder: 'Тел. (XXX)XXX-XX-XX', class: 'order-form', id: 'glowing-border' %>
+                <br>
+              </td>
+            </tr>
+          </table>
+      <div class="address-form"><%= f.text_area :address, placeholder: 'Адресс доставки', class: 'form-control' %></div>
+        <br>
+      <div class="payment-select"><%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Выберите способ оплаты.' %></div>
+          <br>
+      <div class="order-submit-button"><%= f.submit 'Оформить заказ', class: 'btn btn-default' %></div>
+      <% end %>
+      <div class="order-submit-button"><%= link_to 'Продолжить покупки', root_path %></div>
     </div>
     <% else  %>
       <h3 align="center">Ваша корзина пока пуста</h3>
