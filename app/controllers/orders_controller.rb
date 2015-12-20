@@ -2,10 +2,11 @@ class OrdersController < ApplicationController
 
   def create
     @cart = current_cart
-    @order = Order.new(order_params)
+    @order = @cart.orders.new(order_params)
     @order.add_line_items_from_cart(@cart)
       if @order.save
-        Cart.destroy(session:[:cart_id])
+        @cart.destroy if @cart.id == session[:cart_id]
+        session[:cart_id] = nil
         redirect_to root_path, notice: 'Ваш заказ оформлен, ожидайте звонка, мы скоро с Вами свяжемся.'
       else
         redirect_to :back, alert: 'Что-то пошло не так...'
