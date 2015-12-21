@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :products, only: [:index, :show]
   resources :line_items
-  get 'cart' => 'carts#show'
+  #get 'cart' => 'carts#show'
+  resources :carts, only: [:show, :destroy]
+  resources :orders
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
