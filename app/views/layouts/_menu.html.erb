@@ -29,7 +29,7 @@
         <li> <%= link_to 'Оплата и доставка', '#' %> </li>
         <li> <%= link_to image_tag('shopping-cart.png', size: '22x22'), cart_path(current_cart) %></li>
         <li> <span class="badge" id="cart-count"><%= line_items_cart %></span></li>
-        <% if signed_in?%>
+        <% if current_user %>
           <li class="dropdown" id="current_user_right">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
             <ul class="dropdown-menu">
