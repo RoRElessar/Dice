@@ -123,3 +123,26 @@
   border-radius: 4px;
   margin-left: 8px;
 }
+
+ul#results {
+  position: absolute;
+  background-color: white;
+  z-index: 6666;
+  list-style: none;
+  padding: 4px 20px;
+  border: 1px solid #a5a5a5;
+  outline: none;
+  border-color: #52A8EC;
+  box-shadow: 0 0 8px rgba(82,168,236,.6);
+  border-radius: 0 0 4px 4px;
+  margin-top: -1px;
+  width: 196px;
+  display: none;
+  li {
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+      color: #337ab7;
+    }
+  }
+}
