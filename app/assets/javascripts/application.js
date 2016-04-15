@@ -15,3 +15,23 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree
+
+var ready;
+ready = function() {
+    $('#q').bind("change input paste", function(){
+        var val = $(this).val();
+        $.get( "/search_suggestions?query="+val, function(data) {
+            $('#results').empty();
+            $('#results').show();
+            $.each(data, function(index, result) {
+                $('#results').append('<li>'+result.fulltitle+'</li>');
+                $('#results').click(function() {
+                    location.href = '/products/'+result.id;
+                });
+            });
+        });
+    });
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
